@@ -1,8 +1,25 @@
 
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 
-const HeaderMenu=()=>{
+const HeaderMenu=({open,handleClose})=>{
+
+    const openMenu=Boolean(open);
+
     return(
-        <>Hello from headerMenu</>
+        <Menu
+        id="basic-menu"
+        anchorEl={openMenu}
+        open={open}
+        onClose={handleClose}
+        MenuListProps={{
+          'aria-labelledby': 'basic-button',
+        }}
+      >
+        <MenuItem onClick={handleClose}>Profile</MenuItem>
+        <MenuItem onClick={handleClose}>My account</MenuItem>
+        <MenuItem onClick={handleClose}>Logout</MenuItem>
+      </Menu>
     )
 }
 

@@ -38,7 +38,7 @@ const StyledToolbar = styled(Toolbar)(`
 
 `)
 
-const InppputSearchField=styled(InputBase)`
+const InppputSearchField = styled(InputBase)`
     background:#ffffff;
     hight:30px;
     width:55%;
@@ -49,13 +49,21 @@ const Logo = styled('img')({
     width: 64
 })
 
-const handleClick=()=>{
-    
-}
 
-const Header = () => {
 
-const [open,setOpen]=useState(null);
+const Header = (e) => {
+
+    const [open, setOpen] = useState(null);
+
+    const handleClick = () => {
+
+        setOpen(e.currentTarget);
+
+    }
+    const handleClose=()=>{
+        setOpen(null);
+    }
+
 
     return (
         <AppBar>
@@ -65,8 +73,12 @@ const [open,setOpen]=useState(null);
                     <MenuIcon />
                     <Typography>Menu</Typography>
                 </Box>
-                <HeaderMenu/>
+
+                <HeaderMenu open={open} handleClose={handleClose} />
+                
+
                 <InppputSearchField />
+
                 <Typography>IMDb<Box component='span'>Pro</Box></Typography>
                 <Box>
                     <BookmarkAddIcon />
@@ -75,7 +87,7 @@ const [open,setOpen]=useState(null);
                 <Typography>Sing In</Typography>
                 <Box>
                     <Typography>EN</Typography>
-                    <ExpandMoreIcon/>
+                    <ExpandMoreIcon />
                 </Box>
             </StyledToolbar>
         </AppBar>
