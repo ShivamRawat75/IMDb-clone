@@ -9,8 +9,8 @@ const HeaderMenu=({open,handleClose})=>{
     return(
         <Menu
         id="basic-menu"
-        anchorEl={openMenu}
-        open={open}
+        anchorEl={open}
+        open={openMenu}
         onClose={handleClose}
         MenuListProps={{
           'aria-labelledby': 'basic-button',

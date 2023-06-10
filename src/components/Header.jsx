@@ -51,11 +51,11 @@ const Logo = styled('img')({
 
 
 
-const Header = (e) => {
+const Header = () => {
 
     const [open, setOpen] = useState(null);
 
-    const handleClick = () => {
+    const handleClick = (e) => {
 
         setOpen(e.currentTarget);
 
