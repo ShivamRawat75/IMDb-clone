@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 import { Box, styled } from '@mui/material'
 import { categoryMovies } from '../service/api'
 import { NOWPLAYING_API_URL } from '../constants/constant'
-
+import Slide from './Slide'
 import UpNext from './UpNext'
 
 const Wrapper = styled(Box)({
@@ -40,6 +40,7 @@ export default function Home() {
           <Banner movies={movies} />
           <UpNext movies={movies} />
         </Wrapper>
+        <Slide movies={movies}/>
       </Component>
 
     </>
