@@ -16,9 +16,9 @@ const HeaderMenu=({open,handleClose})=>{
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
+        <MenuItem onClick={handleClose}>Popular</MenuItem>
+        <MenuItem onClick={handleClose}>Top Rated</MenuItem>
+        <MenuItem onClick={handleClose}>Upcoming</MenuItem>
       </Menu>
     )
 }
