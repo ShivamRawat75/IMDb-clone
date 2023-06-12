@@ -1,6 +1,8 @@
 import React from 'react'
 import Header from './Header'
+import Banner from './Banner'
 import { useEffect,useState } from 'react'
+import { Box } from '@mui/material'
 import { categoryMovies } from '../service/api'
 import { NOWPLAYING_API_URL } from '../constants/constant'
 export default function Home() {
@@ -10,15 +12,19 @@ export default function Home() {
   useEffect(()=>{
     const getData=async()=>{
       let  response= await categoryMovies(NOWPLAYING_API_URL);
-      setMovies(response.result);
+      setMovies(response.results);
+      console.log(response.results);
     }
     getData();
   },[])
 
 
   return (
-    <div>
+    <>
       <Header />
-    </div>
+      <Box>
+        <Banner movies={movies}/>
+      </Box>
+    </>
   )
 }
