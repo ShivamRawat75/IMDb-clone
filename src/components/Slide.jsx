@@ -22,6 +22,7 @@ const responsive = {
 const StyledBanner = styled('img')`
 
     width:100%;
+    margin-top: 20px;
 `
 const Title = styled(Typography)(`
         
