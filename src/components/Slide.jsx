@@ -33,7 +33,7 @@ const Title = styled(Typography)(`
 
 export default function Slide({ movies }) {
     return (
-        <div>
+        
             <Carousel
                 responsive={responsive}
                 swipeable={false}
@@ -59,6 +59,6 @@ export default function Slide({ movies }) {
                 }
 
             </Carousel>
-        </div>
+        
     )
 }
