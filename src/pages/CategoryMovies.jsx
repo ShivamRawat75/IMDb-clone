@@ -62,6 +62,7 @@ export default function CategoryMovies() {
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
+        
         const getData = async (API_URL) => {
             let response = await categoryMovies(API_URL);
             setMovies(response.results);

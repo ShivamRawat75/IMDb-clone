@@ -11,7 +11,7 @@ function App() {
     <Router>
 
       <Routes>
-
+      <Route path={'http://localhost:3000/'} element={<Home />} />
         <Route path={routePath.home} element={<Home />} />
         <Route path={routePath.categories} element={<CategoryMovies />} />
         <Route path={routePath.invalid} element={<Home />} />

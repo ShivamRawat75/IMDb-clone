@@ -7,7 +7,10 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import HeaderMenu from './HeaderMenu';
 
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { routePath } from '../constants/route';
+
 
 
 const StyledToolbar = styled(Toolbar)(`
@@ -53,6 +56,8 @@ const Logo = styled('img')({
 
 const Header = () => {
 
+    const navigate=useNavigate();
+
     const [open, setOpen] = useState(null);
 
     const handleClick = (e) => {
@@ -68,7 +73,7 @@ const Header = () => {
     return (
         <AppBar position='static'>
             <StyledToolbar>
-                <Logo src={logoURL} alt="logo" />
+                <Logo src={logoURL} alt="logo" onClick={()=>navigate(routePath.home)} />
                 <Box onClick={handleClick}>
                     <MenuIcon />
                     <Typography>Menu</Typography>

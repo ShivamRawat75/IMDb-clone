@@ -41,10 +41,7 @@ export default function Home() {
           <UpNext movies={movies} />
         </Wrapper>
         <Slide movies={movies}/>
-        <Slide movies={movies}/>
-        <Slide movies={movies}/>
-        <Slide movies={movies}/>
-        <Slide movies={movies}/>
+        
       </Component>
 
     </>
