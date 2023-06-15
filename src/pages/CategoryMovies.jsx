@@ -3,6 +3,10 @@ import { Typography, styled } from '@mui/material';
 import React, { useEffect, useState } from 'react'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import { moviesType } from '../constants/constant';
+import {Divider} from '@mui/material';
+
+import MoviesList from '../components/MoviesList';
 
 import Header from '../components/Header'
 import { Box } from '@mui/material'
@@ -39,6 +43,18 @@ const Title = styled(Typography)(`
 
 `)
 
+const Component=styled(Box)`
+
+    width :80%;
+    margin :auto;
+`
+
+const Container=styled(Box)`
+
+    background:#f5f5f5;
+    padding :10px;
+`
+
 export default function CategoryMovies() {
 
     const { search } = useLocation();
@@ -69,7 +85,7 @@ export default function CategoryMovies() {
     return (
         <>
             <Header />
-            <Box>
+            <Component>
                 <Carousel
                     responsive={responsive}
                     swipeable={false}
@@ -95,7 +111,15 @@ export default function CategoryMovies() {
                     }
 
                 </Carousel>
-            </Box>
+                <Container>
+                    <Typography variant='h6'>TMDb Charts</Typography>
+                    <Typography variant='h4'>IMDb {moviesType[search.split('=')[1]]} Movies</Typography>
+                    <Typography style={{fontSize:12, margin:5 }} >IMDb Top {movies.length} as rated by regular IMDb voters.</Typography>
+                <Divider/>
+                <MoviesList movies={movies}/>
+                </Container>
+                
+            </Component>
         </>
     )
 }
